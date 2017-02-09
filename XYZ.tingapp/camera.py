@@ -10,7 +10,7 @@ class Camera:
 
     def __init__(self, d):
         self.d = d
-        self.pos = Vector(self.d, self.d, self.d)
+        self.pos = Vector(self.d, 0, 0)
         self.dir = Vector(1, 0, 0)
     
     def rotateDirection(self):

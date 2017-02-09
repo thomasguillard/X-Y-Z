@@ -69,7 +69,7 @@ for v1 in vertices:
 @right_button.press
 def toggleDebug():
     global camera
-    camera.rotateZ(36)
+    camera.rotateZ(10)
     camera.rotateDirection()
 
 @midright_button.press
