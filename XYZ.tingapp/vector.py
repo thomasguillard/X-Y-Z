@@ -50,31 +50,31 @@ class Vector:
         return sqrt(self.mag2())
     
     def norm(self):
-        v = self.divVectors(self.mag())
+        v = divVector(self, self.mag())
         self.x = v.x
         self.y = v.y
         self.z = v.z
 
-def subVectors(self, other):
-    newx = self.x - other.x
-    newy = self.y - other.y
-    newz = self.z - other.z
+def subVectors(v1, v2):
+    newx = v1.x - v2.x
+    newy = v1.y - v2.y
+    newz = v1.z - v2.z
     return Vector(newx, newy, newz)
 
-def addVectors(self, other):
-    newx = self.x + other.x
-    newy = self.y + other.y
-    newz = self.z + other.z
+def addVectors(v1, v2):
+    newx = v1.x + v2.x
+    newy = v1.y + v2.y
+    newz = v1.z + v2.z
     return Vector(newx, newy, newz)
 
-def mulVectors(self, factor):
-    newx = factor * self.x
-    newy = factor * self.y
-    newz = factor * self.z
+def mulVector(v, factor):
+    newx = factor * v.x
+    newy = factor * v.y
+    newz = factor * v.z
     return Vector(newx, newy, newz)
 
-def divVectors(self, divisor):
-    newx = self.x / divisor
-    newy = self.y / divisor
-    newz = self.z / divisor
+def divVector(v, divisor):
+    newx = v.x / divisor
+    newy = v.y / divisor
+    newz = v.z / divisor
     return Vector(newx, newy, newz)
