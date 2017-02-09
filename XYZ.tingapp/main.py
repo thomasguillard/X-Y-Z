@@ -20,11 +20,9 @@ edges = []
 size = 100
 
 # Register Camera
-camera = Camera()
-
-print camera.dir.info()
+camera = Camera(500)
 camera.rotateDirection()
-print camera.dir.info()
+
 
 # Let's create the 8 vertices of a cube
 for x in xrange(2):
@@ -70,6 +68,12 @@ for v1 in vertices:
 
 @right_button.press
 def toggleDebug():
+    global camera
+    camera.rotateZ(36)
+    camera.rotateDirection()
+
+@midright_button.press
+def rotateCamera():
     global debug
     debug = not(debug)
 
@@ -110,4 +114,25 @@ def loop():
         )
 
     screen.text('Front View', font_size = 10)
+    screen.text(
+        'Camera Position: ',
+        xy = (0, 150),
+        align = 'left',
+        font_size = 10)
+    screen.text(
+        '[' + str(round(camera.pos.x,2)) + ', ' + str(round(camera.pos.y,2)) + ', ' + str(round(camera.pos.z,2)) +']',
+        xy = (0, 162),
+        align = 'left',
+        font_size = 10)
+    screen.text(
+        'Camera Direction: ',
+        xy = (0, 180),
+        align = 'left',
+        font_size = 10)
+    screen.text(
+        '[' + str(round(camera.dir.x,2)) + ', ' + str(round(camera.dir.y,2)) + ', ' + str(round(camera.dir.z,2)) +']',
+        xy = (0, 192),
+        align = 'left',
+        font_size = 10)
+
 tingbot.run()
