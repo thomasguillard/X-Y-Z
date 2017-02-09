@@ -5,6 +5,9 @@ import tingbot
 from tingbot import screen
 
 class Edge:
+    '''
+        An Edge is line in 3d space between two Vertices.
+    '''
     def __init__(self, _vertex1, _vertex2, _stroke):
         self.start = _vertex1
         self.end = _vertex2

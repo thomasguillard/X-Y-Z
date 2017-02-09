@@ -5,6 +5,10 @@ import tingbot
 from tingbot import screen
 
 class Vertex:
+    '''
+        A vertex is a point in 3d space.
+        It has 3 coordinates.
+    '''
     def __init__(self, _x, _y, _z, _stroke):
         self.coordinates = Vector(_x, _y, _z)
         self.stroke = _stroke

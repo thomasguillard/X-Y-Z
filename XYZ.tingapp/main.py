@@ -7,6 +7,9 @@ from vertex import *
 import edge
 from edge import *
 
+import camera
+from camera import *
+
 debug = False
 
 # Let's store vertices and edges
@@ -15,6 +18,13 @@ edges = []
 
 # Cube size
 size = 100
+
+# Register Camera
+camera = Camera()
+
+print camera.dir.info()
+camera.rotateDirection()
+print camera.dir.info()
 
 # Let's create the 8 vertices of a cube
 for x in xrange(2):
@@ -100,6 +110,4 @@ def loop():
         )
 
     screen.text('Front View', font_size = 10)
-
-
 tingbot.run()
