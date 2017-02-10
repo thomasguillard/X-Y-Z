@@ -23,7 +23,7 @@ class Camera:
         self.dir.norm()
     
     def moveTo(self, x, y, z):
-        self.pox.z = x
+        self.pox.x = x
         self.pox.y = y
         self.pox.z = z
     
