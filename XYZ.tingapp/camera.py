@@ -33,3 +33,16 @@ class Camera:
         yt = self.pos.x * math.sin(a_r) + self.pos.y * math.cos(a_r)
         self.pos.x = xt
         self.pos.y = yt
+    
+    def project(self, vertex):
+        v = vector.subVectors(vertex.coordinates, self.pos)
+        #print v.info()
+        dist = vertex.coordinates.dot(self.dir)
+        #print dist
+        newx = vertex.coordinates.x - dist * self.dir.x
+        newy = vertex.coordinates.y - dist * self.dir.y
+        newz = vertex.coordinates.z - dist * self.dir.z
+        vertex.proj.x = newx
+        vertex.proj.y = newy
+        vertex.proj.z = newz
+        #print vertex.proj.info()
