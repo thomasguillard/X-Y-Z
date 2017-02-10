@@ -11,6 +11,7 @@ class Vertex:
     '''
     def __init__(self, _x, _y, _z, _stroke):
         self.coordinates = Vector(_x, _y, _z)
+        self.proj = Vector(0, 0, 0)
         self.stroke = _stroke
     
     def plot(self):
